@@ -1606,7 +1606,7 @@ body{
             </div>
             
            <div class="developer">
-            <p class="devop">I Am into <span class="front">FrontEnd Developer</span></p>
+            <p class="devop" id="auto_text">I Am into <span class="front">FrontEnd Developer</span></p>
           </div>
           <div class="about">
             <a href="#section2" class="about-a"><h1 class="about1">About Me <span class="arrow">&#x2193;</span></h1></a>
@@ -1786,7 +1786,30 @@ body{
             function closebar(){
                 document.getElementById("openmenu").style.width="0px";
             }
+               
            
+        </script>
+     <script>
+          const front1 = document.getElementById('front123');
+          const textEl = document.getElementById('auto_text');
+          textEl.style.fontSize = '30px';
+          textEl.style.fontWeight='500';
+          
+          const text = "I Am Into FrontEnd Develope";
+          let idx = 1;
+
+            writeText()
+
+            function writeText() {
+           textEl.innerText = text.slice(0, idx);
+            idx++
+            if(idx > text.length) {
+                idx = 1
+            }
+            setTimeout(writeText, 100);
+          }
+
+
         </script>
 </body>
 </html>
